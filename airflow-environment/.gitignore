@@ -1,0 +1,3 @@
+.idea
+airflow/logs/*
+airflow/*pid
