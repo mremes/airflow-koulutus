@@ -20,7 +20,7 @@ with DAG(dag_id='weather_dag', default_args=args) as dag:
         return '{}_{}'.format(filetype, city) + '_{{ ds_nodash }}.csv'
 
     drop_files = BashOperator(task_id='drop_files',
-                              bash_command='cd $AIRFLOW_HOME && rm *_{{ ds_nodash }}.csv')
+                              bash_command='cd $AIRFLOW_HOME/.. && rm *_{{ ds_nodash }}.csv')
 
     for city in cities:
         historical_target = get_filename_by_type_and_city('historical', city)
@@ -74,7 +74,4 @@ with DAG(dag_id='weather_dag', default_args=args) as dag:
                                                          mime_type='text/csv')
             parsing_task >> filetogcs
             filetogcs >> drop_files
-
-
-
 

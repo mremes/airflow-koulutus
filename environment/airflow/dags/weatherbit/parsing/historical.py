@@ -22,11 +22,3 @@ def parse_temperature(templates_dict, **kwargs):
 
     df = pd.read_csv(source)[['temp', 'timestamp_utc']]
     df.to_csv(target, index=False)
-
-
-if __name__ == '__main__':
-    parsing_type = sys.argv[1]
-    source = sys.argv[2]
-    target = sys.argv[3]
-    fn = eval('parse_{}'.format(parsing_type))
-    fn(dict(source=source, target=target))
