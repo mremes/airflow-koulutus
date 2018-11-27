@@ -4,7 +4,7 @@ import requests
 HOURLY_DATA_URL = 'https://api.weatherbit.io/v2.0/history/hourly'
 
 
-def fetch_hourly_data(api_key, city, templates_dict, **kwargs):
+def fetch_hourly_data_adapter(api_key, city, templates_dict, **kwargs):
     start_date = templates_dict.get('start_date')
     end_date = templates_dict.get('end_date')
     target = templates_dict.get('target')
@@ -16,6 +16,10 @@ def fetch_hourly_data(api_key, city, templates_dict, **kwargs):
     if not target:
         raise ValueError("Argument 'target' must be provided.")
 
+    return fetch_hourly_data(api_key, city, start_date, end_date, target)
+
+
+def fetch_hourly_data(api_key, city, start_date, end_date, target):
     params = dict(city=city,
                   start_date=start_date,
                   end_date=end_date,

@@ -1,5 +1,5 @@
-from weatherbit.api.historical import fetch_hourly_data
-from weatherbit.parsing.historical import parse_weather, parse_temperature
+from weatherbit.api.historical import fetch_hourly_data_adapter
+from weatherbit.parsing.historical import parse_weather_adapter, parse_temperature_adapter
 import datetime
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
