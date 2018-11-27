@@ -1,0 +1,9 @@
+{
+  "title": "Mihin Airflow soveltuu?",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "* Extract-Transform-Loadin toteutus\n   - Extract – Airflow'n avulla on helppo yhdistää erilaisiin tietokantahallintasysteemeihin\n   - Transform – esim. Pythonin dataprosessointi kirjastot kuten `pandas` helposti käytettävissä – unohtamatta, että Airflow tarjoaa rajapinnat missä tahansa ajoympäristössä ajettuun ohjelmaan Dockerin avulla\n   - Load – Yhtä helppoa kuin datan lataaminen\n* Extract-Transform-Loadin **orkestrointi**\n    - ei tehdä mitään työtä omalla raudalla vaan tehdään kaikki datan siirtely ja prosessointi pilvipalveluissa ja pilvipalveluiden välillä\n    - laaja kirjo pilvipalveluiden rajapintoja\n* Eräajo-tyyliin ajettujen ohjelmien/skriptien monitorointi ja hallinnointi\n    - soveltuu täysin `cron`in korvaajaksi\n    - versionhallinnoitavissa\n* Raportointi\n    - rajapinnat sähköpostipalvelimeen, Slackiin, JIRA:an,...\n    - taulujen luonti visualisointityökaluja varten\n* Data-analyysin tarvitsemien datasettien luominen\n   - Airflow soveltuu hyvin data-analyysin ja koneoppimisen automatisoitavissa olevien vaiheiden mallintamiseen (datan keruu, datan puhdistaminen, datan muovaaminen, muovatun datan syöttäminen malliin, mallin testaus, ...)\n   - yleinen totuus on, että data scientistit käyttävät 80% datan puhdistukseen ja 20% analyysin tekemiseen"
+    }
+  ]
+}

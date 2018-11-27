@@ -1,0 +1,1 @@
+* Ei tarvitse raahata isoa dataa omille palvelimille vaan suorittaa operaatiot mahdollisimman lähellä kantaa

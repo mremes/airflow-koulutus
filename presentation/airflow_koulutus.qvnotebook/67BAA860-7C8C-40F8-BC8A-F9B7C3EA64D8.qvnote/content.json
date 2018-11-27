@@ -1,0 +1,9 @@
+{
+  "title": "Koulutuksen rakenne",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "## Johdanto\n* Mikä on Apache Airflow?\n* Mitä ongelmia Airflow'lla voi ratkaista?\n* Mitä ongelmia Airflow'lla ei kannata yrittää ratkaista?\n* Airflow'n arkkitehtuuri\n## Airflow'n peruskonseptit\n* DAG\n* Operaattorit\n* ...\n* Käyttöliittymä\n## Use case: Säädatan hakeminen, prosessointi ja tallentaminen pilveen\n* Kehitetään \"livenä\"\n* Ajetaan lokaalisti\n## Lounas?\n## Data engineeringin parhaat käytänteet ja niiden soveltaminen Airflow'ssa\n* Idempotenssi -> funktionaalinen paradigma\n* Toistettavuus -> backfillaus\n* Tulosten ja tilan ositus ajassa\n## Pilvipalveluiden käyttö\n* Pilvipalveluoperaattorit\n* Ison datan käsittely\n   - Google BigQuery\n## Airflown konfigurointi, kehitys, integrointi, deployment\n* Miten testata?\n* CI\n## Google Cloud Composer -esittely"
+    }
+  ]
+}

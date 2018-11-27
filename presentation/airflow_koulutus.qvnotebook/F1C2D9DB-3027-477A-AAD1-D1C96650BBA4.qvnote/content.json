@@ -1,0 +1,9 @@
+{
+  "title": "Operaattoreiden ominaisuuksia",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "* Operaattori-instanssi (tarkemmin, `TaskInstance`) voi saada tiloja:\n    - `queued` – laitettu jonoon\n    - `running` – ajossa\n    - `success` – onnistunut, ei virheitä\n    - `failed` – epäonnistunut, ei yritetä uudelleen\n    - `up_for_retry` – epäonnistunut, mutta yritetään vielä uudestaan\n    - `removed` - poistettu\n    - `skipped` - ohitettu, kun on ajauduttu toiseen haaraan\n    - `paused` - tauolla tai muuta hämärää tapahtunut\n* Operaattorit voivat olla\n    - \"perustaoperaattoreita\", joissa ajettava Python-koodi on kokonaan omaa käsialaa, \n    - yhdistelmä muita operaattoreita tai\n    - yhdistelmä koukkuja (yhteyksiä palveluihin) ja operaattoreita.\n\n* Operaattorit eivät jaa yleensä dataa keskenään, patsi `XCom`in välityksellä. Kuitenkin on suositeltavaa, että tässä tapauksessa yhdistetään operaattorit, sillä `XCom`in kanssa on ollut yhteisön palautteen perusteella ongelmia (allekirjoittanut ei ole joutunut `XCom`ia käyttämään).\n\n* Ne voidaan asettaa altaaseen, jolloin altaan määrittelemän arvon K verran operaattori-instansseja voi olla ajossa samanaikaisesti\n    - tällä vältetään esim. tietokantapalvelun kuormittuminen, jos sen käyttöön liittyy quotoja\n    - operaattoreille voidaan antaa prioriteetti, jolloin tärkeämmät, korkeamman prioriteetin omaavat työt pääsevät ajoon nopeammin\n* Muuten ajossa olevien operaattoreiden määrää rajottaa konfiguraation parallelismi-asetukset"
+    }
+  ]
+}

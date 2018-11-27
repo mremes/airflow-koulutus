@@ -1,0 +1,9 @@
+{
+  "title": "Templatointi",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "## Yleistä\n\nTemplatoinnin avulla voidaan luoda ajettavasta työstä parametrisoitu, jolloin ajettavan ohjelman argumentit, ajettava SQL-query tms. perustuu ajoon tai DAG:iin liittyviin parametreihin.\n\nAirflow tarjoaa käyttäjälle juurikin ajoon liittyviä muuttujia:\n* `{{ ds }}` – ajopäivä muodossa YYYY-MM-DD\n* `{{ next_ds }}` – edellinen _ajopäivä_ samassa muodossa\n   - eli jos ajetaan kerran viikossa niin `next_ds` on ds - delta\\_7\\_päivää\n* `{{ yesterday_ds }}` – ajopäivää _edeltävä päivä_ samassa muodossa\n* `{{ ds_nodash }}` – ajopäivä muodossa YYYYMMDD\n* `{{ var.api_key }}` – variable `api_key`\n* ...\n\n... ja funktioita (makroja):\n* `{{ macros.ds_add }}` – lisää päivään delta\\_n\\_päivää\n* `{{ macros.time }}` – aikamoduuli\n* ...\n\n"
+    }
+  ]
+}

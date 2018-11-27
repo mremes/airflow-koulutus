@@ -1,0 +1,9 @@
+{
+  "title": "Mihin Airflow ei sovellu?",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "* Tosiaikasovellukset\n   - töiden käynnistäminen kestää sekunteja\n   - peräkkäisten ajojen välinen aika on minimissään yksi minuutti (`*/1 * * * *`)\n* Yksinkertaiset sovellukset\n   - ei liene kannattavaa pystytää systeemiä, jos on vain yksi eräajettava skripti\n   - `cron` riittää tähän\n* Airflow on kompromissi\n  - läpinäkyvyys, monialustaisuus, hallittavuus > nopeus"
+    }
+  ]
+}

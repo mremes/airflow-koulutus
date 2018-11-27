@@ -1,0 +1,13 @@
+{
+  "title": "Pilvipalveluoperaattorit",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "Airflowssa on monipuoliset rajapinnat erilaisiin pilvipalveluihin (erityisesti AWS ja GCP), joista mainittakoon pilvessä olevat \n* tallennuspalvelut (S3, GCS),\n* tietokantapalvelut (BigQuery, Redshift, Datastore, Cloud SQL),  \n* serverless-koodinajopalvelut (Cloud Functions, Athena), \n* viestipalvelut (Pub/Sub, SNS) ja\n* manageroidut koneoppimispalvelut (MLEngine, Sagemaker).\n\nVaikka nykyisessä Airflow-repositoriossa on harmillisen vähän MS Azure-palveluiden operaattoreita, niin mikään ei estä näiden luomista itse, sillä tiettävästi Azurella on kattavat Python-rajapinnat erilaisiin Azure-palveluihin – allekirjoittaneella tosin kokemusta vain DocDB Python-rajapinnasta."
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

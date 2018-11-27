@@ -1,0 +1,9 @@
+{
+  "title": "Ison datan käsittely",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "* Ei tarvitse raahata isoa dataa omille palvelimille vaan suorittaa operaatiot mahdollisimman lähellä kantaa"
+    }
+  ]
+}

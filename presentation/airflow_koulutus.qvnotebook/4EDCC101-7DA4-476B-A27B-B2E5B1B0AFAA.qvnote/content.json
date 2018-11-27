@@ -1,0 +1,21 @@
+{
+  "title": "Arkkitehtuuri",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "![AirflowArchitecture.png](quiver-image-url/E4CB15522E345C35A37A707415B2CCD4.png =805x616)\nhttps://medium.com/@dustinstansbury/understanding-apache-airflows-key-concepts-a96efed52b1a\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n# Käyttöliittymä\n![AirflowUI.png](quiver-image-url/A95965FCD6027AE4BE733DC1A31C0AD8.png =1436x602)\n* `airflow webserver` käynnistää webpalvelimen, joka avaa käyttöliittymän porttiin 8080 ja kuuntelee porttiin tulevia käskyjä\n* käyttöliittymä näyttää metatietokannan tilan\n* webpalvelin kirjoittaa käyttäjältä tulevia käskyjä metadatatietokantaan, joista muut Airflow-prosessit (erityisesti `scheduler`) sitten tarvittaessa aktivoituvat\n* asetukset määriteltävissä `airflow.cfg`-konfiguraatiotiedostossa\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n# Metadatatietokanta\n* Airflow koko tila on säilössä metatietokannassa\n* Airflown komponentit lukevat ja kirjoittavat tähän yhteen tietokantaan\n* On suositeltavaa käyttää jotain muuta kuin SQLiteä, joka on oletustietokanta\n    - tyypillinen kanta on esimerkiksi Postgres, joko itse tai pilvipalvelun hallinoimana\n\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n\n# Scheduler & workers\n* käynnistetään komennolla `airflow scheduler`\n* etsii työt, joita pitää suorittaa ja asettaa ne suoritettavaksi Executorille, joka sitten hallitsee työprosesseja eli workereita\n* käynnistää työt aikataulun mukaisesti sen jälkeen kun schedule_interval on päättynyt\n* kun työ on ajastettu ajettavaksi päivittäin, niin työ ajaa päivän loputtua\n* varmistaa töiden olevan ajossa tai valmiina kuluvaan kellonaikaan nähden\n* kirjoittaa kantaan, jos SLA ei ole täyttynyt\n* `airflow.cfg`-konfiguraatiossa määritellään schedulerin ja executorin asetukset\n\n\n\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>"
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

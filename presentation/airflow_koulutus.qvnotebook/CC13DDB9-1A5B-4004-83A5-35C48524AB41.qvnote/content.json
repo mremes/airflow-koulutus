@@ -1,0 +1,17 @@
+{
+  "title": "Connectionit, Variablet, Poolit",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "## Connections\n* Connectionit ovat yhteysolioita, joita voi luoda ja muokata käyttöliittymästä\n\n* Niille annetaan palvelusta riippuen osoite, käyttäjätunnus ja salasana, avain\n\n* Hookit antavat connection-olion kutsulla `get_connection()`, joka on yliajettava metodi `BaseHook`-luokassa\n\n* Jos ei halua käyttää käyttöliittymää yhteysolioiden luomiseen, sama onnistuu ympäristömuuttujien avulla (lisätietoja dokumentaatiossa)"
+    },
+    {
+      "type": "markdown",
+      "data": "## Variables\n\n* Variablet ovat ympäristömuuttujien kaltaisia arvoja, joita voi käyttää koodissa `airflow.models.Variable`-luokan avulla\n* `api_key = Variable.get('api key')`\n* Hyödyllisyys on siinä, että konfiguraatiota voi muuttaa käyttöliittymästä\n* DAG:iin voi lisätä esimerkiksi uusia haaroja `Variable`-arvojen avulla, kuten esimerkistä saamme kohta nähdä"
+    },
+    {
+      "type": "markdown",
+      "data": "## Poolit\n* Poolit rajoittavat töiden rinnakkain ajamista\n* Ne ovat hyödyllisiä, kun kohdepalvelussa on jokin rinnakkaisuusrajoitus tai  halutaan muusta syystä käyttää resursseja maltillisesti (esimerkiksi yksi kantakysely kerrallaan)"
+    }
+  ]
+}

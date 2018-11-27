@@ -1,0 +1,21 @@
+{
+  "title": "DAG",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "* kokoelma tehtäviä, jotka halutaan ajaa jossain tietyssä järjestyksessä, tietyillä ehdoilla\r\n* Directed Acyclic Graph, suunnattu syklitön verkko\r\n   - yksittäisessä solmussa vieraillaan enintään kerran\r\n   - solmut järjestetty topologisesti\r\n   - riippuvuudet suoritetaan ensin\r\n* DAG:n avulla mallinnetaan työnkulun töiden järjestys ja riippuvuussuhteet\r\n* DAG:t ajastetaan ajettavaksi johonkin aikaan (cron-tyyliin, esim. päivittäin tai joka toinen tunti varttia yli)\r\n"
+    },
+    {
+      "type": "markdown",
+      "data": "# DAG:it koodina\n* konfiguraatio Python-koodina\n* data scientisteilla ja muilla ei-softadevaajilla matalampi kynnys automatisoida töitään ja laittaa johonkin aikaan ajettavaksi\n    - saattaa vaatia data engineerin tekemään viimeisen silauksen tekemisen työlle, mutta speksi on paljon helpommin kuvattavissa DAG:ien avulla\n* Pythonin laaja kirjastojen kirjo – joka on tuttu data scientisteille – käytettävissä\n* itse laskenta voidaan suorittaa muussa ympäristössä tai palvelussa\n* kattavat API:t pilvipalveluihin"
+    },
+    {
+      "type": "markdown",
+      "data": "```python\n\nimport airflow\nfrom airflow import DAG\nfrom airflow.operators.dummy_operator import DummyOperator\nfrom airflow.operators.bash_operator import BashOperator\n\nargs = dict(owner='matti',\n            start_date=airflow.utils.dates.days_ago(2))\n\ndag = DAG(dag_id='example', \n          default_args=args, \n          schedule_interval='0 0 * * *')\n\nrun_me_first = BashOperator(task_id='run_me_first', \n                            bash_command='echo \"Let\\'s start!\"', \n                            dag=dag)\n\nrun_me_last = DummyOperator(task_id='run_me_last', dag=dag)\n\nfor i in range(3):\n    task_id = 'i_am_{}_in_the_loop'.format(str(i))\n    cmd = 'echo \"I am task number {}.\" && sleep 1'.format(str(i))\n    \n    task = BashOperator(task_id=task_id, \n                        bash_command=cmd,\n                        dag=dag)\n    \n    run_me_first >> task\n    task >> run_me_last\n```\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n"
+    },
+    {
+      "type": "markdown",
+      "data": "![Screen Shot 2018-11-27 at 19.29.12.png](quiver-image-url/A5E0CEB97423F36A30E146EEA1598569.png =880x400)\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>"
+    }
+  ]
+}

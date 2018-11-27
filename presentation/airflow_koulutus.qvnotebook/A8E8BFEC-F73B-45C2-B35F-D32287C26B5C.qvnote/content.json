@@ -1,0 +1,9 @@
+{
+  "title": "Muut toiminnallisuudet",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "* XCom – tilan persistointi operaattorien välillä\r\n* muuttujat – vastaa ympäristömuuttujia, asetettavissa käyttöliittymästä\r\n* haarautuminen – taskien ajaminen ehdollisesti\r\n* poolit – tiettyä tyyppiä olevien taskien kokoaminen joukkoon, jolla voi määrittää joukon taskeille rajoituksia\r\n* triggerit – DAG:n ajaminen ad hoc\r\n* templatointi – esim. SQL:n templatointi, jolloin templaatin parametrit määräytyvät DAG:n ominaisuuksien (esim. aika) perusteella\r\n* backfill – historian uudelleenajo"
+    }
+  ]
+}

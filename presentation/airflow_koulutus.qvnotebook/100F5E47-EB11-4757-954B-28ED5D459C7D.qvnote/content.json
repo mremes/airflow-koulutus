@@ -1,0 +1,21 @@
+{
+  "title": "Mikä on Apache Airflow?",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "* työnkulkujen (workflow) luomiseen, ajastamiseen ja hallinnointiin tarkoitettu alusta\r\n* työnkulut määritellään Python-koodina\r\n* työnkulut ajastetaan niin ikään koodissa käyttäen tuttuja cron-aikatauluja (kerran tunnissa, kerran päivässä, 15 yli joka toinen tunti, jne.)\r\n* työnkulkuja hallinnoidaan pääasiallisesti käyttöliittymän avulla\r\n    - mahdollista toteuttaa suurin osa hallinnointitoimenpiteistä myös komentoriviliittymän avulla, mikä mahdollistaa makrojen tekemisen ja tallentamisen versionhallintaan\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>"
+    },
+    {
+      "type": "markdown",
+      "data": "# Historia\n* Maxime Beauchemin, Airbnb, 2006\n* Lähdekoodi avointa alusta saakka\n* ASF-projektiksi vuoden 2017 alussa\n* +5600 committia, 99 releasea (viimeisin 6 päivää sitten), +10K tähteä GitHubissa\n* https://github.com/apache/incubator-airflow#who-uses-apache-airflow\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>"
+    },
+    {
+      "type": "markdown",
+      "data": "# Miksi Airflow on hyödyllinen?\n* vaikka alusta on Python-pohjainen, sillä pystyy ajamaan käytännössä _mitä tahansa_ koodia (esim. Dockerissa)\n* **alusta siis toimii liimana erinäisten dataa sekä tuottavien applikaatioiden että dataa säilövien siilojen välillä**\n* näiden yhdistäminen voi olla monimutkainen prosessi, mutta sen kuvaamiseen auttaa *riippuvuusverkko*, joka on Airflow'n olennainen konsepti (palataan kohta tähän)\n<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n"
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    }
+  ]
+}

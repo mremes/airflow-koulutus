@@ -1,0 +1,9 @@
+{
+  "title": "Task",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "## `Task`\n* taskilla dynaamiset parametrit riippuen ajasta ja riippuvuuksista\n* siitä tulee ajoaikainen työn instanssi (`Job`)\n   - ajetaan jossain ympäristössä\n   - onnistuu, epäonnistuu, yrittää uudelleen\n   - ajamisesta (execution) ja vuorottamisesta (scheduling) vastaavat erilliset palvelut\n* taskeilla voi olla palvelutasosopimus (SLA)\n* `TaskInstance`t generoivat lokitiedostoja, joista voi debugata virheitä"
+    }
+  ]
+}

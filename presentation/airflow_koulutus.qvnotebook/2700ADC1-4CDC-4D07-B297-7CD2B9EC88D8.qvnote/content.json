@@ -1,0 +1,9 @@
+{
+  "title": "Operaattorit",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "## Yleistä\n\n\"Stabiilit\" moduulit: `airflow.operators`\nYhteisön kehittelemät operaattorit: `airflow.contrib.operators`\n\n* Operaattorit ovat DAG:n työn yksiköitä (solmuja), joita ajetaan DAG:n ajastamaan aikaan. Operaattorit määrittelevät miten ja mitä ajetaan.\n\n* Operaattorien väliset riippuvuussuhteet määritellään DAG-tiedostossa.\n\n* Operaattorit voivat ajaa eri koneilla kun käytetään `CeleryExecutor`ia."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Executor",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "* Airflow’n sisällä työt (Job) annetaan täytäntöönpanijan (Executor) ajettavaksi määrättyyn aikaan\r\n* Töitä on mm. seuraavanlaisia (tämä ei ole niin olennaista tietoa, mutta auttaa virheiden paikantamisessa jos sellaisia ilmaantuu):\r\n    - `SchedulerJob` – hallitsee yksittäisen aktiivisen DAG:n tahdittamista\r\n    - `BackfillJob` – hallitsee yksittäisen DAG:n ”täyttämistä”\r\n    - `LocalTaskJob` – hallitsee yksittäisen TaskInstance’n ajamista\r\n* Executoreita on seuraavanlaisia:\r\n    - `SequentialExecutor` – ajetaan yhdessä lokaalissa prosessissa peräkkäin (suositellaan vain testikäyttöön)\r\n    - `LocalExecutor` – ajetaan lokaalisti rinnakkain `subprocess` kirjaston avulla\r\n    - `CeleryExecutor` – ajetaan hajautetusti rinnakkain Celeryssä\r\n"
+    }
+  ]
+}
