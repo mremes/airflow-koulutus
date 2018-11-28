@@ -8,6 +8,8 @@ pylint = "*"
 
 [packages]
 apache-airflow = {version = "==1.10.1rc2"}
+google-api-python-client = "*"
+pandas-gbq = "*"
 
 [requires]
 python_version = "3.5"
