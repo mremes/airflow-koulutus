@@ -1,1 +1,1 @@
- export AIRFLOW_HOME=~/studies/airflow-koulutus/environment/airflow
+ export AIRFLOW_HOME=~/airflow-koulutus/environment/airflow
