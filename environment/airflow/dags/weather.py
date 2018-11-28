@@ -8,7 +8,7 @@ from airflow.contrib.operators.file_to_gcs import FileToGoogleCloudStorageOperat
 from airflow.models import Variable
 
 args = {
-    'owner': 'airflow',
+    'owner': 'matti',
     'start_date': datetime.datetime(day=20, month=11, year=2018),
 }
 
@@ -38,7 +38,7 @@ with DAG(dag_id='weather_dag', default_args=args) as dag:
         fetch_weather_data = PythonOperator(
             task_id='weather_task_for_{}'.format(city),
             pool='weatherbit_api',
-            python_callable=fetch_hourly_data,
+            python_callable=fetch_hourly_data_adapter,
             provide_context=True,
             templates_dict=templated_kwargs,
             op_kwargs=op_kwargs
@@ -49,7 +49,7 @@ with DAG(dag_id='weather_dag', default_args=args) as dag:
                                 target=weather_target)
 
         parse_weather_op = PythonOperator(task_id='parse_weather_{}'.format(city),
-                                          python_callable=parse_weather,
+                                          python_callable=parse_weather_adapter,
                                           provide_context=True,
                                           templates_dict=templated_kwargs)
 
@@ -58,7 +58,7 @@ with DAG(dag_id='weather_dag', default_args=args) as dag:
                                 target=temperature_target)
 
         parse_temperature_op = PythonOperator(task_id='parse_temperature_{}'.format(city),
-                                              python_callable=parse_temperature,
+                                              python_callable=parse_temperature_adapter,
                                               provide_context=True,
                                               templates_dict=templated_kwargs)
 
@@ -74,4 +74,3 @@ with DAG(dag_id='weather_dag', default_args=args) as dag:
                                                          mime_type='text/csv')
             parsing_task >> filetogcs
             filetogcs >> drop_files
-
