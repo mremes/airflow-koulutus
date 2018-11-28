@@ -6,7 +6,7 @@
     - `up_for_retry` – epäonnistunut, mutta yritetään vielä uudestaan
     - `removed` - poistettu
     - `skipped` - ohitettu, kun on ajauduttu toiseen haaraan
-    - `paused` - tauolla tai muuta hämärää tapahtunut
+    - `shutdown` - tauolla tai muuta hämärää tapahtunut
 * Operaattorit voivat olla
     - "perustaoperaattoreita", joissa ajettava Python-koodi on kokonaan omaa käsialaa, 
     - yhdistelmä muita operaattoreita tai
