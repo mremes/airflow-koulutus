@@ -10,6 +10,7 @@ pylint = "*"
 apache-airflow = {version = "==1.10.1rc2"}
 google-api-python-client = "*"
 pandas-gbq = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.5"

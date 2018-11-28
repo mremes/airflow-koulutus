@@ -1,3 +1,4 @@
 .idea
 airflow/logs/*
 airflow/*pid
+airflow/airflow.db
